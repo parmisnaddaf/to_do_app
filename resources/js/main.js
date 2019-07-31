@@ -10,7 +10,7 @@ function add_click(){
     alertify.error('you need to enter an activity name first!');
   }
   else{
-    
+    // comment here
   }
 
 }
