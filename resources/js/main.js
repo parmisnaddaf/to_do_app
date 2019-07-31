@@ -1,9 +1,18 @@
-add_button = document.getElementById('addbutton');
-item = document.getElementById('item');
-console.log(add_button);
+var add_button = document.getElementById('addbutton');
+var item = document.getElementById('item');
 
-add_button.addEventListener ("click", function() {
-  if (item.value === ''){
-    alert("you must enter an activity first");
+
+function add_click(){
+  var input = item.value;
+  if (input === ''){
+    alertify.set('notifier','delay', 3);
+    alertify.set('notifier','position', 'top-center');
+    alertify.error('you need to enter an activity name first!');
   }
-});
+  else{
+    
+  }
+
+}
+
+add_button.addEventListener("click", add_click);
