@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <title>To do list app</title>
   <link rel="shortcut icon" type="image/png" href="https://www.omnigroup.com/assets/img/icons/omnifocus-web%402x.png"/>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Asap|Indie+Flower&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Amaranth&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <!-- <link rel="stylesheet" type="text/css" href="resources/css/reset.css"> -->
   <link rel="stylesheet" type="text/css" href="resources/css/style.css">
@@ -20,11 +20,22 @@
     <input type="text" placeholder="enter an anctivity.." onfocus="this.placeholder = ''" onblur="this.placeholder = 'enter an anctivity..'" id="item"/>
     <button class="modal" title="Add the activity" id= "addbutton">+</button>
   </header>
-  <ul class="todo" style="list-style-type:none">
-    <li>hi</li>
-    <li>booo</li>
-    <li>byee</li>
-  </ul>
+  <div class="container">
+    <ul class="todo" style="list-style-type:none">
+      <li>
+        hellomalekom ozra khanoom
+        <div class="buttons">
+          <button type="button" name="button" class= "done" href= ""><img src="resources/css/check.png" class ="img"></button>
+          <button type="button" name="button" class= "remove"><img src="resources/css/remove.png" class ="img"</button>
+
+        </div>
+
+      </li>
+
+
+    </ul>
+
+  </div>
   <!-- The javascript files -->
   <script type="text/javascript" src="resources/js/main.js"></script>
   <script type="text/javascript" src="resources/js/alertifyjs/alertify.min.js"></script>
