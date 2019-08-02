@@ -5,15 +5,17 @@ var list = document.getElementById('todo');
 
 function remove_item(){
   item = this.parentNode.parentNode;
-  list.removeChild(item);
+  parent = item.parentNode;
+  parent.removeChild(item);
 
 }
 
 function check_item(){
-  console.log(this);
-  this.src = "../css/boo.png";
-  console.log(this);
-
+  console.log("BOO")
+  alertify.set('notifier','delay', 3);
+  alertify.set('notifier','position', 'bottom-right');
+  alertify.success('good job');
+  this.src = 'resources/css/can.png';
 }
 
 
@@ -21,7 +23,7 @@ function add_click(){
   var input = item.value;
   if (input === ''){
     alertify.set('notifier','delay', 3);
-    alertify.set('notifier','position', 'top-center');
+    alertify.set('notifier','position', 'bottom-right');
     alertify.error('you need to enter an activity name first!');
   }
   else{

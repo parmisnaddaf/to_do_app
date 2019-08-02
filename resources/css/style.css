@@ -125,6 +125,7 @@ ul.todo li {
   box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
   position: relative;
   padding: 0 100px 0 0;
+
 }
 
 ul.todo li .buttons {
@@ -170,6 +171,11 @@ ul.todo li .buttons button:last-of-type:before {
 
 .done:hover {
   opacity: 0.6;
+}
+
+.done:visited {
+  opacity: 0.6 no-repeat;
+  background:url('myimagepath-02.jpg') top left no-repeat;
 }
 .remove:hover{
   opacity: 0.6;
