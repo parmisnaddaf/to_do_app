@@ -1,12 +1,11 @@
 var add_button = document.getElementById('addbutton');
-var item = document.getElementById('item');
 var list = document.getElementById('todo');
 
 
 function remove_item(){
+  list = this.parentNode.parentNode.parentNode;
   item = this.parentNode.parentNode;
-  parent = item.parentNode;
-  parent.removeChild(item);
+  list.removeChild(item);
 
 }
 
@@ -20,6 +19,7 @@ function check_item(){
 
 
 function add_click(){
+  var item = document.getElementById('item');
   var input = item.value;
   if (input === ''){
     alertify.set('notifier','delay', 3);
@@ -49,8 +49,8 @@ function add_click(){
 
     new_item.appendChild(buttons);
     list.prepend(new_item);
-    item.value = '';
   }
+  item.value = '';
 }
 
 add_button.addEventListener("click", add_click);
