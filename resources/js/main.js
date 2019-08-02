@@ -1,5 +1,20 @@
 var add_button = document.getElementById('addbutton');
 var item = document.getElementById('item');
+var list = document.getElementById('todo');
+
+
+function remove_item(){
+  item = this.parentNode.parentNode;
+  list.removeChild(item);
+
+}
+
+function check_item(){
+  console.log(this);
+  this.src = "../css/boo.png";
+  console.log(this);
+
+}
 
 
 function add_click(){
@@ -10,9 +25,30 @@ function add_click(){
     alertify.error('you need to enter an activity name first!');
   }
   else{
-    // comment here
-  }
+    var new_item = document.createElement('li');
+    new_item.innerText = input;
 
+    var buttons = document.createElement('div');
+    buttons.classList.add('buttons');
+
+    var done = document.createElement('button');
+    done.classList.add('done');
+    done.innerHTML =  "<img src=\"resources/css/successs.png\" width=\"30px\" height=\"30px\">";
+    done.addEventListener('click', check_item);
+
+    var remove = document.createElement('button');
+    remove.classList.add('remove');
+    remove.innerHTML =  "<img src=\"resources/css/can.png\" width=\"30px\" height=\"30px\">";
+    remove.addEventListener('click', remove_item);
+
+    buttons.appendChild(done);
+    buttons.appendChild(remove);
+
+
+    new_item.appendChild(buttons);
+    list.prepend(new_item);
+    item.value = '';
+  }
 }
 
 add_button.addEventListener("click", add_click);
