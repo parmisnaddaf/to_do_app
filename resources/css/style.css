@@ -175,7 +175,6 @@ ul.todo li .buttons button:last-of-type:before {
 
 .done:visited {
   opacity: 0.6 no-repeat;
-  background:url('myimagepath-02.jpg') top left no-repeat;
 }
 .remove:hover{
   opacity: 0.6;

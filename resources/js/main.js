@@ -5,16 +5,25 @@ var list = document.getElementById('todo');
 function remove_item(){
   list = this.parentNode.parentNode.parentNode;
   item = this.parentNode.parentNode;
+  // text = item.getAttribute("value");
+  text = item.innerText;
+  alertify.set('notifier','delay', 2);
+  alertify.message("Removed " + text + ".");
   list.removeChild(item);
 
 }
 
 function check_item(){
-  console.log("BOO")
-  alertify.set('notifier','delay', 3);
-  alertify.set('notifier','position', 'bottom-right');
-  alertify.success('good job');
-  this.src = 'resources/css/can.png';
+  console.log(this)
+  if (this.innerHTML === "<img src=\"resources/css/success.png\" width=\"30px\" height=\"30px\">"){
+    this.innerHTML =  "<img src=\"resources/css/successs.png\" width=\"30px\" height=\"30px\">";
+  }
+  else{
+    this.innerHTML =  "<img src=\"resources/css/success.png\" width=\"30px\" height=\"30px\">";
+    alertify.set('notifier','delay', 3);
+    alertify.set('notifier','position', 'bottom-right');
+    alertify.success('good job');
+  }
 }
 
 
