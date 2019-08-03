@@ -63,3 +63,9 @@ function add_click(){
 }
 
 add_button.addEventListener("click", add_click);
+
+document.getElementById('item').onkeypress = function(event){
+    if (event.keyCode == 13 || event.which == 13){
+      addbutton.click();
+    }
+};
