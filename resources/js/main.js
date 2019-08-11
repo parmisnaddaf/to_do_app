@@ -1,7 +1,6 @@
 var add_button = document.getElementById('addbutton');
 var list = document.getElementById('todo');
 
-
 function remove_item(){
   list = this.parentNode.parentNode.parentNode;
   item = this.parentNode.parentNode;
@@ -10,6 +9,16 @@ function remove_item(){
   alertify.set('notifier','delay', 2);
   alertify.message("Removed " + text + ".");
   list.removeChild(item);
+  console.log(len);
+  var len = document.querySelectorAll("li").length;
+  if (len === 0){
+    var message = document.createElement('div');
+    message.classList.add('message');
+    message.id = 'message';
+    message.textContent = "Your list is empty!";
+    document.body.appendChild(message);
+    console.log(message);
+  }
 
 }
 
@@ -36,6 +45,10 @@ function add_click(){
     alertify.error('you need to enter an activity name first!');
   }
   else{
+    var len = document.querySelectorAll("li").length;
+    if (len === 0){
+      message.remove();
+    }
     var new_item = document.createElement('li');
     new_item.innerText = input;
 
@@ -49,7 +62,7 @@ function add_click(){
 
     var remove = document.createElement('button');
     remove.classList.add('remove');
-    remove.innerHTML =  "<img src=\"resources/css/can.png\" width=\"30px\" height=\"30px\">";
+    remove.innerHTML =  "<img src=\"resources/css/trash_p.png\" width=\"30px\" height=\"30px\">";
     remove.addEventListener('click', remove_item);
 
     buttons.appendChild(done);

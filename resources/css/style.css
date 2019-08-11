@@ -110,6 +110,13 @@ header button:hover{
 
 }
 
+.message{
+  padding: 50px;
+  text-align: center;
+  font-size: 25px;
+  color : #4d004d;
+}
+
 ul.todo {
   width: 98%;
   font-size: 25px;
@@ -125,6 +132,7 @@ ul.todo li {
   box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
   position: relative;
   padding: 0 100px 0 0;
+  color : #4d004d;
 
 }
 
